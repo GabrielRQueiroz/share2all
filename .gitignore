@@ -14,10 +14,7 @@
 # misc
 .DS_Store
 /src/env
-<<<<<<< HEAD
 .env
-=======
->>>>>>> e5749deeff2b27bca71e2bb5e533ad5efc3d094d
 .env.local
 .env.development.local
 .env.test.local
