@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import { MdDownloadForOffline } from 'react-icons/md';
+import { BsArrowUpRight } from 'react-icons/bs';
 import { Link, useParams } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import { client, urlFor } from '../client';
@@ -75,7 +76,7 @@ const PinDetail = ({ user }) => {
 					</div>
 					<div className='w-full p-5 flex-1 xl:min-w-620'>
 						<div className='flex items-center justify-between'>
-							<div className='flex gap-2 items-center'>
+							<div className='flex flex-grow-0 gap-2 items-center'>
 								<a
 									href={`${pinDetail.image.asset.url}?dl=`}
 									download
@@ -84,8 +85,14 @@ const PinDetail = ({ user }) => {
 									<MdDownloadForOffline />
 								</a>
 							</div>
-							<a href={pinDetail.destination} target='_blank' rel='noreferrer'>
-								{pinDetail.destination?.slice(8)}
+							<a
+								href={pinDetail.destination}
+								className='ml-1 flex justify-end  text-sm'
+								target='_blank'
+								rel='noreferrer'
+							>
+								{pinDetail.destination?.slice(8, 32)}...
+								<BsArrowUpRight />
 							</a>
 						</div>
 						<div>

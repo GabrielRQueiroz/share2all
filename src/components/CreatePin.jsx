@@ -115,7 +115,7 @@ const CreatePin = ({ user }) => {
 								/>
 							</label>
 						) : (
-							<div className='relative h-full'>
+							<div className='relative w-full h-full'>
 								<img src={imageAsset?.url} alt='uploaded-pic' className='h-full w-full' />
 								<button
 									type='button'
@@ -165,7 +165,7 @@ const CreatePin = ({ user }) => {
 								onChange={(e) => {
 									setCategory(e.target.value);
 								}}
-								className='outline-none w-4/5 text-base border-b-2 border-gray-200 p-2 rounded-md cursor-pointer'
+								className='outline-none w-4/5 text-base border-b-2 capitalize border-gray-200 p-2 rounded-md cursor-pointer'
 							>
 								<option value='others' className='sm:text-bg bg-white'>
 									Select Category
@@ -173,7 +173,7 @@ const CreatePin = ({ user }) => {
 								{categories.map((item, option) => (
 									<option
 										key={option}
-										className='text-base border-0 outline-none capitalize bg-white text-black '
+										className='text-base border-0 outline-none bg-white text-black '
 										value={item.name}
 									>
 										{item.name}
