@@ -36,7 +36,7 @@ const Search = ({ searchTerm }) => {
 						<p className='font-semibold'>Try other keywords 🔎</p>
 					</div>
 					<img
-						className='mx-auto mt-16 w-3/5 pointer-events-none'
+						className='mx-auto mt-10 w-4/5 max-w-xl pointer-events-none'
 						src={NotFound}
 						alt='A sad face :('
 					/>

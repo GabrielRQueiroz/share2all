@@ -38,12 +38,12 @@ const Feed = () => {
 	if (!pins?.length) {
 		return (
 			<>
-				<div className='text-center w-full mt-8 text-lg font-bold'>
+				<div className='text-center w-full h-full mt-16 text-lg font-bold'>
 					<h2 className='text-2xl'>No pins available yet</h2>
 					<p className='font-semibold'>Be the first to add to this category!</p>
 				</div>
 				<img
-					className='mx-auto mt-16 w-3/5 pointer-events-none'
+					className='mx-auto mt-10 w-4/5 max-w-xl pointer-events-none'
 					src={NoPins}
 					alt='A sad face :('
 				/>

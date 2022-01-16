@@ -7,7 +7,7 @@ const defaultStyle = `h-full`;
 const Spinner = ({ message, fullScreen }) => {
 	return (
 		<div
-			className={`flex flex-col justify-center items-center w-full ${
+			className={`flex flex-col justify-center items-center relative w-full ${
 				fullScreen ? fullPage : defaultStyle
 			}`}
 		>

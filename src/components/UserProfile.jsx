@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { AiOutlineLogout } from 'react-icons/ai';
 import { useParams, useNavigate } from 'react-router-dom';
 import { GoogleLogout } from 'react-google-login';
+import { googleApi } from '../env/envVariables';
 
 import { userCreatedPinsQuery, userQuery, userSavedPinsQuery } from '../utils/data';
 import { client } from '../client';
@@ -75,7 +76,7 @@ const UserProfile = () => {
 					<div className='absolute top-0 z-1 right-0 p-2'>
 						{userId === User.googleId && (
 							<GoogleLogout
-								clientId={`${process.env.REACT_APP_GOOGLE_API_TOKEN}`}
+								clientId={`${googleApi}`}
 								render={(renderProps) => (
 									<button
 										type='button'
