@@ -93,7 +93,7 @@ const UserProfile = () => {
 						)}
 					</div>
 				</div>
-				<div className='text-center mb-7 w-screen'>
+				<div className='text-center mb-7 w-full mx-auto'>
 					<button
 						type='button'
 						onClick={(e) => {
