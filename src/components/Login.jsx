@@ -2,11 +2,10 @@ import React from 'react';
 import GoogleLogin from 'react-google-login';
 import { FcGoogle } from 'react-icons/fc';
 import { useNavigate } from 'react-router-dom';
-import { googleApi } from '../env/envVariables';
 import logo from '../assets/logowhite.png';
 import ShareVideo from '../assets/share.mp4';
-
 import { client } from '../client';
+
 
 const Login = () => {
 	const navigate = useNavigate();
@@ -14,7 +13,6 @@ const Login = () => {
 	const responseGoogle = (response) => {
 		localStorage.setItem('user', JSON.stringify(response.profileObj));
 
-		console.log(response.profileObj.name);
 		const { name, googleId, imageUrl } = response.profileObj;
 
 		const doc = {
@@ -47,7 +45,7 @@ const Login = () => {
 					</div>
 					<div className='shadow-2xl'>
 						<GoogleLogin
-							clientId={`${googleApi}`}
+							clientId={`${process.env.REACT_APP_GOOGLE_TOKEN_API}`}
 							render={(renderProps) => (
 								<button
 									type='button'

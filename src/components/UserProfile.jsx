@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { AiOutlineLogout } from 'react-icons/ai';
-import { useParams, useNavigate } from 'react-router-dom';
 import { GoogleLogout } from 'react-google-login';
-import { googleApi } from '../env/envVariables';
-
-import { userCreatedPinsQuery, userQuery, userSavedPinsQuery } from '../utils/data';
+import { AiOutlineLogout } from 'react-icons/ai';
+import { useNavigate, useParams } from 'react-router-dom';
 import { client } from '../client';
+import { userCreatedPinsQuery, userQuery, userSavedPinsQuery } from '../utils/data';
 import MasonryLayout from './MasonryLayout';
 import Spinner from './Spinner';
 
@@ -76,7 +74,7 @@ const UserProfile = () => {
 					<div className='absolute top-0 z-1 right-0 p-2'>
 						{userId === User.googleId && (
 							<GoogleLogout
-								clientId={`${googleApi}`}
+								clientId={`${process.env.REACT_APP_GOOGLE_TOKEN_API}`}
 								render={(renderProps) => (
 									<button
 										type='button'
