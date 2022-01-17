@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 import { GoogleLogout } from 'react-google-login';
 import { AiOutlineLogout } from 'react-icons/ai';
 import { useNavigate, useParams } from 'react-router-dom';
 import { client } from '../client';
 import { userCreatedPinsQuery, userQuery, userSavedPinsQuery } from '../utils/data';
+import GoogleLogoutPopup from './GoogleLogoutPopup';
 import MasonryLayout from './MasonryLayout';
 import Spinner from './Spinner';
 
@@ -52,6 +55,14 @@ const UserProfile = () => {
 		navigate('/login');
 	};
 
+	const submit = () => {
+		confirmAlert({
+			customUI: ({ onClose }) => {
+				return <GoogleLogoutPopup logout={logout} onClose={onClose} />;
+			},
+		});
+	};
+
 	if (!user) return <Spinner message='Loading profile' />;
 
 	return (
@@ -73,21 +84,26 @@ const UserProfile = () => {
 					<h1 className='font-bold text-3xl text-center mt-3'>{user.userName}</h1>
 					<div className='absolute top-0 z-1 right-0 p-2'>
 						{userId === User.googleId && (
-							<GoogleLogout
-								clientId={`${process.env.REACT_APP_GOOGLE_TOKEN_API}`}
-								render={(renderProps) => (
-									<button
-										type='button'
-										className=' bg-white p-2 rounded-full cursor-pointer outline-none shadow-md'
-										onClick={renderProps.onClick}
-										disabled={renderProps.disabled}
-									>
-										<AiOutlineLogout color='red' fontSize={21} />
-									</button>
-								)}
-								onLogoutSuccess={logout}
-								cookiePolicy='single_host_origin'
-							/>
+							<div
+								onClick={submit}
+								className='bg-white rounded-full cursor-pointer outline-none shadow-md'
+							>
+								<GoogleLogout
+									clientId={`${process.env.REACT_APP_GOOGLE_TOKEN_API}`}
+									render={(renderProps) => (
+										<button
+											type='button'
+											className=' bg-white p-4 rounded-full cursor-pointer outline-none shadow-md'
+											// onClick={renderProps.onClick}
+											disabled={renderProps.disabled}
+										>
+											<AiOutlineLogout color='red' fontSize={21} />
+										</button>
+									)}
+									onLogoutSuccess={logout}
+									cookiePolicy='single_host_origin'
+								/>
+							</div>
 						)}
 					</div>
 				</div>
