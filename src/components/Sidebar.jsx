@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { RiHomeFill } from 'react-icons/ri';
+import { ImHome } from 'react-icons/im';
 import { IoIosArrowForward } from 'react-icons/io';
 import logo from '../assets/logo.png';
 import { categories } from '../utils/data';
@@ -31,7 +31,7 @@ const Sidebar = ({ closeToggle, user }) => {
 						className={({ isActive }) => (isActive ? isActiveStyle : isNotActiveStyle)}
 						onClick={handleCloseSidebar}
 					>
-						<RiHomeFill />
+						<ImHome size='1.5rem' />
 						Home
 					</NavLink>
 					<h3 className='mt-2 px-5 text-base 2xl:text-xl'>Discover categories</h3>
@@ -45,7 +45,7 @@ const Sidebar = ({ closeToggle, user }) => {
 							<img
 								src={category.image}
 								alt='Category Preview'
-								className='w-8 h-8 rounded-full shadow-sm'
+								className='w-8 h-8 object-cover rounded-full shadow-sm'
 							/>
 							{category.name}
 						</NavLink>
@@ -55,11 +55,11 @@ const Sidebar = ({ closeToggle, user }) => {
 			{user && (
 				<Link
 					to={`user-profile/${user._id}`}
-					className='flex my-5 mb-3 gap-2 p-2 items-center bg-white rounded-lg shadow-lg mx-3'
+					className='flex my-5 mb-3 gap-2 p-2 items-center bg-white rounded-lg shadow-lg mx-3 hover:bg-gray-100'
 					onClick={handleCloseSidebar}
 				>
 					<img src={user.image} className='w-10 h-10 rounded-full' alt='user-profile' />
-					<p>{user.userName}</p>
+					<p className='ml-2'>{user.userName}</p>
 					<IoIosArrowForward />
 				</Link>
 			)}
