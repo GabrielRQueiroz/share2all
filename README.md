@@ -8,7 +8,7 @@
     <img alt="Twitter: https://twitter.com/GabrielRQz" src="https://img.shields.io/twitter/follow/GabrielRQz?style=social" />
   </a>
 </p>
-
+<img alt="App homepage print" src="./src/assets/preview.PNG" />
 > A social network where people can share images from anywhere and interact with anyone.
 
 ### 🏠 [Homepage](https://github.com/GabrielRQueiroz/share2all)
