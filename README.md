@@ -7,6 +7,7 @@
   <a href="https://twitter.com/GabrielRQz" target="_blank">
     <img alt="Twitter: https://twitter.com/GabrielRQz" src="https://img.shields.io/twitter/follow/GabrielRQz?style=social" />
   </a>
+  [![Netlify Status](https://api.netlify.com/api/v1/badges/1a606910-30ee-4eda-b4ed-6013199d2d4f/deploy-status)] (https://app.netlify.com/sites/share2all/deploys)
 </p>
 <img alt="App homepage print" src="./src/assets/preview.PNG" />
 > A social network where people can share images from anywhere and interact with anyone.
