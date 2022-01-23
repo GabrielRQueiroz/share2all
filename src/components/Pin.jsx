@@ -34,11 +34,11 @@ const Pin = ({ pin }) => {
 						<img
 							className='max-h-52 my-2 pointer-events-none'
 							src={Deleting}
-							alt='Woman waving and sharing love'
+							alt='Guy throwing a piece of paper in a trash bin'
 						/>
 						<div className='w-full my-3 justify-evenly flex'>
 							<button
-								className='bg-red-700 hover:bg-red-800 text-sm sm:text-base font-semibold text-white shadow-sm rounded-full px-3 md:px-4 py-2'
+								className='bg-red-500 hover:bg-red-600 text-sm sm:text-base font-semibold text-button shadow-sm rounded-full px-3 md:px-4 py-2'
 								onClick={() => {
 									deletePin(id);
 									onClose();
@@ -93,18 +93,15 @@ const Pin = ({ pin }) => {
 				onMouseEnter={() => setPostHovered(true)}
 				onMouseLeave={() => setPostHovered(false)}
 				onClick={() => navigate(`/pin-detail/${_id}`)}
-				className=' relative cursor-zoom-in w-auto hover:shadow-lg rounded-lg overflow-hidden transition-all duration-500 ease-in-out'
+				className='relative cursor-zoom-in w-auto hover:shadow-lg rounded-lg overflow-hidden transition-all duration-500 ease-in-out'
 			>
 				<img
-					className='rounded-lg w-full '
+					className='rounded-lg w-full'
 					src={urlFor(image).width(250).url()}
 					alt='user-post'
 				/>
 				{postHovered && (
-					<div
-						className='absolute top-0 w-full h-full flex flex-col justify-between p-1 pr-2 pt-2 pb-2 z-50'
-						style={{ height: '100%' }}
-					>
+					<div className='absolute top-0 w-full h-full flex flex-col justify-between p-1 pr-2 pt-2 pb-2 z-50'>
 						<div className='flex items-center justify-between'>
 							<div className='flex gap-2'>
 								<a
@@ -121,7 +118,7 @@ const Pin = ({ pin }) => {
 							{alreadySaved?.length !== 0 ? (
 								<button
 									type='button'
-									className='bg-red-500 opacity-70 hover:opacity-100 text-white font-bold px-5 py-1 text-base rounded-3xl hover:shadow-md outline-none'
+									className='bg-button opacity-70 hover:opacity-100 text-white font-bold px-5 py-1 text-base rounded-3xl hover:shadow-md outline-none'
 								>
 									{pin?.save?.length} Saved
 								</button>
@@ -132,18 +129,18 @@ const Pin = ({ pin }) => {
 										savePin(_id);
 									}}
 									type='button'
-									className='bg-red-500 opacity-70 hover:opacity-100 text-white font-bold px-5 py-1 text-base rounded-3xl hover:shadow-md outline-none'
+									className='bg-button opacity-70 hover:opacity-100 text-white font-bold px-5 py-1 text-base rounded-3xl hover:shadow-md outline-none'
 								>
 									{pin?.save?.length} {savingPost ? 'Saving' : 'Save'}
 								</button>
 							)}
 						</div>
-						<div className=' flex justify-between items-center gap-2 w-full'>
+						<div className='flex justify-between items-center w-full'>
 							{destination?.slice(8).length > 0 ? (
 								<a
 									href={destination}
 									target='_blank'
-									className='bg-white flex items-center gap-2 text-black font-bold p-2 pl-4 pr-4 rounded-full opacity-70 hover:opacity-100 hover:shadow-md'
+									className='bg-white flex items-center gap-1 text-dark font-bold p-2 rounded-full opacity-70 hover:opacity-100 hover:shadow-md'
 									rel='noreferrer'
 								>
 									{' '}
@@ -158,7 +155,7 @@ const Pin = ({ pin }) => {
 										e.stopPropagation();
 										deleteConfirmation(_id);
 									}}
-									className='bg-white p-2 rounded-full w-8 h-8 flex items-center justify-center text-dark opacity-75 hover:opacity-100 outline-none'
+									className='bg-white p-1 rounded-full w-9 h-9 flex items-center justify-center text-dark opacity-75 hover:opacity-100 outline-none'
 								>
 									<AiTwotoneDelete />
 								</button>
@@ -173,7 +170,7 @@ const Pin = ({ pin }) => {
 					src={postedBy?.image}
 					alt='user-profile'
 				/>
-				<p className='font-semibold capitalize'>{postedBy?.userName}</p>
+				<p className='font-semibold capitalize text-primary'>{postedBy?.userName}</p>
 			</Link>
 		</div>
 	);

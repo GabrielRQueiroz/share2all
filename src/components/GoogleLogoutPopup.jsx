@@ -14,7 +14,7 @@ const GoogleLogoutPopup = ({ onClose, logout }) => {
 			/>
 			<div className='w-full my-3 justify-evenly flex'>
 				<button
-					className='bg-red-700 hover:bg-red-800 text-sm sm:text-base font-semibold text-white shadow-sm rounded-full px-3 md:px-4 py-2'
+					className='bg-red-500 hover:bg-red-600 text-sm sm:text-base font-semibold text-button shadow-sm rounded-full px-3 md:px-4 py-2'
 					onClick={() => {
 						logout();
 						onClose();

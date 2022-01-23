@@ -31,7 +31,7 @@ const Search = ({ searchTerm }) => {
 			{pins?.length !== 0 && <MasonryLayout pins={pins} />}
 			{pins?.length === 0 && searchTerm !== '' && !loading && (
 				<>
-					<div className='text-center w-full mt-8 text-lg font-bold'>
+					<div className='text-center text-primary w-full mt-8 text-lg font-bold'>
 						<h2 className='text-2xl'>No pin was found :(</h2>
 						<p className='font-semibold'>Try other keywords 🔎</p>
 					</div>

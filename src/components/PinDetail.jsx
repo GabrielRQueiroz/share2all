@@ -64,7 +64,7 @@ const PinDetail = ({ user }) => {
 		<>
 			{pinDetail && (
 				<div
-					className='flex xl:flex-row flex-col m-auto bg-white'
+					className='flex xl:flex-row flex-col m-auto bg-primary'
 					style={{ maxWidth: '1500px', borderRadius: '32px' }}
 				>
 					<div className='flex justify-center items-center md:items-start flex-initial'>
@@ -80,14 +80,14 @@ const PinDetail = ({ user }) => {
 								<a
 									href={`${pinDetail.image.asset.url}?dl=`}
 									download
-									className='bg-secondaryColor p-2 text-xl rounded-full flex items-center justify-center text-dark opacity-75 hover:opacity-100'
+									className='bg-white p-2 text-xl rounded-full flex items-center justify-center text-dark opacity-75 hover:opacity-100'
 								>
 									<MdDownloadForOffline />
 								</a>
 							</div>
 							<a
 								href={pinDetail.destination}
-								className='ml-1 flex justify-end  text-sm'
+								className='ml-1 flex justify-end items-center opacity-75 hover:opacity-100 p-2 rounded-2xl bg-white text-sm'
 								target='_blank'
 								rel='noreferrer'
 							>
@@ -96,12 +96,14 @@ const PinDetail = ({ user }) => {
 							</a>
 						</div>
 						<div>
-							<h1 className='text-4xl font-bold break-words mt-3'>{pinDetail.title}</h1>
-							<p className='mt-3'>{pinDetail.about}</p>
+							<h1 className='text-4xl font-bold break-words mt-3 text-primary'>
+								{pinDetail.title}
+							</h1>
+							<p className='mt-3 text-secondary'>{pinDetail.about}</p>
 						</div>
 						<Link
 							to={`/user-profile/${pinDetail?.postedBy._id}`}
-							className='flex gap-2 mt-5 items-center bg-white rounded-lg '
+							className='flex gap-2 mt-5 items-center bg-primary rounded-lg text-primary '
 						>
 							<img
 								src={pinDetail?.postedBy.image}
@@ -110,11 +112,11 @@ const PinDetail = ({ user }) => {
 							/>
 							<p className='font-bold'>{pinDetail?.postedBy.userName}</p>
 						</Link>
-						<h2 className='mt-5 text-2xl'>Comments</h2>
+						<h2 className='mt-5 text-2xl text-primary'>Comments</h2>
 						<div className='max-h-370 overflow-y-auto'>
 							{pinDetail?.comments?.map((item) => (
 								<div
-									className='flex gap-2 mt-5 items-center bg-white rounded-lg'
+									className='flex gap-2 mt-5 items-center bg-primary rounded-lg'
 									key={item.comment}
 								>
 									<img
@@ -139,7 +141,7 @@ const PinDetail = ({ user }) => {
 									/>
 								</Link>
 								<input
-									className=' flex-1 flex-grow border-gray-100 outline-none border-2 p-2 rounded-2xl focus:border-gray-300'
+									className='flex-1 flex-grow bg-secondary outline-none p-2 rounded-2xl focus:border-gray-300'
 									type='text'
 									placeholder='Add a comment'
 									value={comment}
@@ -148,7 +150,7 @@ const PinDetail = ({ user }) => {
 							</div>
 							<button
 								type='button'
-								className='bg-red-500 text-white rounded-full px-6 py-2 font-semibold text-base outline-none md:w-auto w-screen'
+								className='bg-button text-button rounded-full px-6 py-2 font-semibold text-base outline-none md:w-auto w-screen'
 								onClick={addComment}
 							>
 								{addingComment ? 'Sending...' : 'Send'}
