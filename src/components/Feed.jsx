@@ -38,7 +38,7 @@ const Feed = () => {
 	if (!pins?.length) {
 		return (
 			<>
-				<div className='text-center w-full h-full mt-16 text-lg font-bold'>
+				<div className='text-center text-primary w-full h-full mt-16 text-lg font-bold'>
 					<h2 className='text-2xl'>No pins available yet</h2>
 					<p className='font-semibold'>Be the first to add to this category!</p>
 				</div>

@@ -1,6 +1,7 @@
 module.exports = {
 	purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
-	darkMode: false, // or 'media' or 'class'
+	darkMode: 'class',
+	important: true,
 	theme: {
 		extend: {
 			margin: {
@@ -38,22 +39,23 @@ module.exports = {
 				350: '350px',
 				620: '620px',
 			},
-			textColor: {
-				lightGray: '#F1EFEE',
-				primary: '#FAFAFA',
-				secColor: '#efefef',
-				navColor: '#BEBEBE',
-			},
 			backgroundColor: {
-				mainColor: '#FBF8F9',
-				secondaryColor: '#F0F0F0',
-				blackOverlay: 'rgba(0, 0 ,0 ,0.7)',
+				primary: 'var(--color-bg-primary)',
+				secondary: 'var(--color-bg-secondary)',
+				button: 'var(--color-bg-button)',
+			},
+			textColor: {
+				accent: 'var(--color-text-accent)',
+				primary: 'var(--color-text-primary)',
+				button: 'var(--color-text-button)',
+				secondary: 'var(--color-text-secondary)',
+				dark: 'var(--color-text-dark)',
 			},
 			keyframes: {
 				'slide-in': {
 					'0%': {
 						'-webkit-transform': 'translateX(-200px)',
-						transform: 'translateX(-200px)',
+						transform: 'translateX(-50vh)',
 					},
 					'100%': {
 						'-webkit-transform': 'translateX(0px)',

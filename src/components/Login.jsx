@@ -66,23 +66,23 @@ const Login = () => {
 				</svg>
 
 				<div className='absolute flex justify-center items-center top-0 right-0 left-0 bottom-0'>
-					<div className='flex flex-col py-16 justify-between items-center h-1/2 w-5/6 sm:w-1/2 lg:w-1/4 bg-black bg-opacity-60 rounded-xl z-50'>
+					<div className='flex flex-col gap-4 py-16 justify-between items-center h-1/2 w-5/6 sm:w-1/2 lg:w-1/4 bg-black bg-opacity-60 rounded-xl z-50'>
 						<div className='text-center'>
 							<p className='text-gray-100 text-lg'>Connect your account</p>
 							<img src={logo} width='200px' alt='Share2All logo' />
 						</div>
 
-						<div className='mb-20 shadow-lg'>
+						<div className='mb-8 shadow-lg'>
 							<GoogleLogin
 								clientId={`${process.env.REACT_APP_GOOGLE_TOKEN_API}`}
 								render={(renderProps) => (
 									<button
 										type='button'
-										className='bg-mainColor flex justify-center items-center p-3 rounded-lg cursor-pointer outline-none'
+										className='bg-white hover:bg-gray-200 duration-75 flex justify-center items-center p-3 rounded-lg cursor-pointer outline-none'
 										onClick={renderProps.onClick}
 										disabled={renderProps.disabled}
 									>
-										<FcGoogle className='mr-4' /> Sign in with google
+										<FcGoogle className='mr-4' /> Sign in with Google
 									</button>
 								)}
 								onSuccess={responseGoogle}

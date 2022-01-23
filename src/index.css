@@ -1,6 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+:root {
+
+}
+
+* {
+	transition: 0.5s all ease-in-out !important;
+}
 
 body {
 	font-family: 'Lato', sans-serif;
@@ -9,3 +13,30 @@ body {
 .hide-scrollbar::-webkit-scrollbar {
 	display: none;
 }
+
+
+.dark {
+	--color-bg-primary: #2d3748;
+	--color-bg-secondary: #283141;
+	--color-bg-button: #eb5b5b;
+	--color-text-primary: #f7fafc;
+	--color-text-button: white;
+	--color-text-secondary: #a7aaae;
+	--color-text-accent: #d85d5d;
+	--color-text-dark: #161616;
+}
+
+.light {
+	--color-bg-primary: #ffffff;
+	--color-bg-secondary: #f9fafb;
+	--color-bg-button: #ef4444;
+	--color-text-primary: #131313
+	--color-text-button: white;
+	--color-text-secondary: #6b7280;
+	--color-text-accent: #b91c1c;
+	--color-text-dark: #161616;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
