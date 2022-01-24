@@ -113,10 +113,10 @@ const PinDetail = ({ user }) => {
 							<p className='font-bold'>{pinDetail?.postedBy.userName}</p>
 						</Link>
 						<h2 className='mt-5 text-2xl text-primary'>Comments</h2>
-						<div className='max-h-370 overflow-y-auto'>
+						<div className='max-h-370 overflow-y-auto duration-75'>
 							{pinDetail?.comments?.map((item) => (
 								<div
-									className='flex gap-2 mt-5 items-center bg-primary rounded-lg'
+									className='flex gap-2 mt-5 items-center text-primary bg-primary rounded-lg'
 									key={item.comment}
 								>
 									<img
@@ -141,7 +141,7 @@ const PinDetail = ({ user }) => {
 									/>
 								</Link>
 								<input
-									className='flex-1 flex-grow bg-secondary outline-none p-2 rounded-2xl focus:border-gray-300'
+									className='flex-1 flex-grow text-primary bg-secondary outline-none p-2 rounded-2xl focus:border-gray-300'
 									type='text'
 									placeholder='Add a comment'
 									value={comment}
@@ -160,7 +160,9 @@ const PinDetail = ({ user }) => {
 				</div>
 			)}
 			{pins?.length > 0 && (
-				<h2 className='text-center font-bold text-2xl mt-8 mb-4'>More like this</h2>
+				<h2 className='text-center font-bold text-2xl text-primary mt-8 mb-4'>
+					More like this
+				</h2>
 			)}
 			{pins ? <MasonryLayout pins={pins} /> : <Spinner message='Loading more pins' />}
 		</>
