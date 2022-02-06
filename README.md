@@ -11,27 +11,7 @@
 <img alt="App homepage print" src="./src/assets/preview.PNG" />
 > A social network where people can share images from anywhere and interact with anyone.
 
-### 🏠 [Homepage](https://github.com/GabrielRQueiroz/share2all)
-
 ### ✨ [Demo](https://share2all.netlify.app/)
-
-## Install
-
-```sh
-npm install
-```
-
-## Usage
-
-```sh
-npm run start
-```
-
-## Run tests
-
-```sh
-npm run test
-```
 
 ## Author
 
